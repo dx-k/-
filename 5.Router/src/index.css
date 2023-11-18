@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.router-link-active{
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+.active_router{
+    color: saddlebrown;
+    text-decoration: none;
+}

@@ -1,0 +1,34 @@
+初始化项目
+    1.在终端初始化vite项目
+        npm init vite-app todos
+    2.使用vscode打开项目，并安装依赖包
+        npm intall
+    3.安装less安装相关的依赖
+        npm i less -D
+梳理项目结构
+    1.重置index.css中的全局样式
+        :root{
+        font-size: 12px;
+        }
+        body{
+        padding: 8px;
+        }
+    2.重置app.vue中的代码结构
+    3.删除components文件夹中的helloworld.vue组件
+    4.运行npm run dev
+封装todo-list组件
+    1.创建并注册TodoList组件
+    2.基于bootstrap渲染列表组件
+    3.基于TodoList组件声明props属性
+    4.渲染列表的DOM组件
+封装todo-input组件
+    1.创建并注册TodoInput组件
+    2.基于bootstrap渲染组件结构
+    3.通过自定义事件向外传递数据
+    4.实现添加任务的功能
+封装todo-button组件
+    1.创建并注册TodoButton组件
+    2.基于bootstrap渲染组件结构
+    3.通过props指定默认激活的按钮
+    4.通过v-model更新激活项的索引
+    5.通过计算属性动态切换列表的数据

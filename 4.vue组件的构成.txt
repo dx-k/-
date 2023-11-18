@@ -1,0 +1,30 @@
+1.vue组件由3个部分组成
+    template -> 组件的模板结构
+    script -> 组件的js行为
+    style -> 组件的样式
+    其中，每个组件中必须含有template模板结构，而script和style是可选的
+2.template节点
+    vue规定：每个组件对应的模板结构，需要定义到template节点中
+    注意：template是vue提供的容器标签，只起到包裹性质的作用，不会被渲染
+    2.1 在template中使用指令
+        在组件template节点中，支持使用前面学到的指令语法，来辅助开发者渲染当前组件的DOM结构
+    2.2 在template中定义根节点
+        在vue2.x版本中，template节点内的DOM结构仅支持单个根节点
+        在vue3.x版本中，template节点内的DOM结构支持多个根节点
+3.script节点
+    vue规定：组件中的script是可选的，开发者可以在script节点中封装组件的js业务逻辑
+    整个script节点通过export default{}来向外导出
+    3.1 script中的name节点
+        name是export default的一个属性
+        可以通过name节点为当前组件定义一个名称，在使用vue-devtools进行项目调试的时候，自定义组件名称可以清晰的区分每个组件
+    3.2 script中的data节点
+        data是export default的一个属性
+        在组件中data不是一个对象，需要写成函数，返回一个对象
+    3.3 script中的methods节点
+        组件中的事件处理函数，必须定义到methods节点中
+4.style节点
+    vue规定：组件的style节点是可选的，开发者可以在style节点中编写美化当前组件的ui结构
+    其中style标签上的lang="css"是可选的，它表示所使用的样式语言。默认只支持普通css语法，可选值有less，sass等
+    1.让style支持less语法
+        1.运行npm install less -D安装依赖包
+        2.在style标签中使用lang="less"，即可使用less语法编写组件的样式

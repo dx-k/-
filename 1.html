@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>aaa</p>
+    <!-- <video controls="" autoplay="" name="media">
+        <source src="" type="audio/mpeg">
+    </video> -->
+    <!-- <video controls="" autoplay="" name="media">
+        <source
+            src="http://m701.music.126.net/20231028234439/7a8d866d7cdea0fbe91e1b46362e2159/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/25358070960/0c23/1e94/f335/e256582282cad4d51161905234e4dd08.mp3"
+            type="audio/mpeg">
+    </video> -->
+    <button onclick="play()">开始</button>
+    <button onclick="stop()">暂停</button>
+</body>
+<script>
+    let data = "";
+    fetch('https://dataiqs.com/api/netease/music/?type=songid&id=2026224214').then(data => {
+        return data.json();
+    }).then(ret => {
+        // 注意这里才是最终的数据
+        console.log(1);
+        console.log(ret.song_url);
+        data = ret.song_url;
+    })
+
+
+  function play(){
+    var audio = document.querySelector("audio");
+    if(audio){
+        audio.play();
+    }else{
+        createAudio();
+    }
+  }
+  
+  function stop(){
+    var audio = document.querySelector("audio");
+    audio.pause();
+  }
+
+  function createAudio(){
+    const audio = document.createElement("audio");
+    audio.src = data;
+    document.querySelector("button").appendChild(audio);
+    audio.controls = true;
+    audio.play();
+  }
+</script>
+
+</html>

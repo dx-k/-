@@ -1,0 +1,30 @@
+1.什么是vue-router
+    vue-router是vue.js官方给出的路由解决方案。它只能结合vue项目使用，能够轻松的管理SPA项目中的组件切换
+2.vue-router的版本
+    vue-router3.x只能结合vue2使用   https://router.vue.js.org/zh/
+    vue-router4.x只能结合vue3使用   https://next.router.vue.js.org/
+3.vue-router 4.x的基本使用
+    1.在项目中安装vue-router
+    2.定义路由组件
+    3.声明路由链接和占位符
+    4.创建路由模块
+    5.导入并挂载路由模块
+3.1 安装vue-router4.x
+    npm install vue-router@next -S // 使用@next下载的一定是4.x版本
+3.2 定义路由组件
+    创建组件文件并导入注册组件
+3.3 声明路由连接和占位符
+    可以使用<router-link>标签声明路由标签，并使用<router-link>标签来声明路由占位符
+    在router-link标签中使用 to 属性定义hash地址 ⭐⭐⭐⭐⭐
+    路由占位符会将需要渲染的组件渲染在占位符的地方
+3.4 创建路由模块 ⭐⭐⭐⭐⭐
+    1.创建 router.js 用于指定路由
+    2.在 router.js 中从 vue-router 中按需导入两个方法
+        createrRouter：创建路由模块
+        createrWebHashHistory：创建浏览器地址历史记录
+    3.导入路由所需要使用的组件
+    4.创建路由对象
+    5.导出路由对象
+3.5 导入并挂载路由模块
+    在 main.js 中导入路由模块
+    使用 app.use() 将路由模块挂载在 app 上即可使用
